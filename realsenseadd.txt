@@ -1,0 +1,11 @@
+
+include に追加
+opencvと一緒に設定
+;C:/opencv349/install/include;C:/opencv349/install/include;C:/Program Files (x86)/Intel RealSense SDK 2.0/include;
+
+linkerに追加
+opencvと一緒に設定
+C:/Program Files (x86)/Intel RealSense SDK 2.0/lib/x64;C:/opencv349/install/x64/vc16/lib
+
+入力に追加
+;opencv_world349.lib;realsense2.lib;
