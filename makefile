@@ -4,11 +4,13 @@ CFLAGS    = -g -MMD -MP -Wall -Wextra -Winit-self -Wno-missing-field-initializer
 LDFLAGS = -pthread $(shell pkg-config --libs --static opencv) -lrealsense2 
 
 LIBS      =
-INCLUDE   = -I./Inc/ 
+INCLUDE   = -I./Inc/ \
+						-I./
 
 TARGET    = ./build/$(shell basename `readlink -f .`)
 
-SOURCES   = main.cpp 
+SOURCES   = main.cpp \
+						realSensseWrapper.cpp
 #$(wildcard Src/peripheral/*.cpp) 
 
 

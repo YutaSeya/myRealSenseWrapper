@@ -123,6 +123,10 @@ Mat realSensseWrapper::getDepthImage()
 
 Mat realSensseWrapper::getDepthDistance()
 {
+	if (!is_data) {
+		// 初回のみ、データを取得する
+		setFrame();
+	}
 	Mat dis(depth_size, CV_16UC1, (void*)depth_distance_frame.get_data(), cv::Mat::AUTO_STEP);
 	dis.convertTo(dis, CV_64F);
 	auto depth_scale = pipe->get_active_profile().get_device().first<depth_sensor>().get_depth_scale();
