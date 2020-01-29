@@ -145,10 +145,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="realSensseWrapper.cpp" />
+    <ClCompile Include="realSenseWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="realSensseWrapper.h" />
+    <ClInclude Include="realSenseWrapper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
