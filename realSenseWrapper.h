@@ -3,7 +3,7 @@
 #include <librealsense2/rs.hpp>
 #include <opencv2/opencv.hpp>
 
-class realSensseWrapper
+class realSenseWrapper
 {
 private:
 	rs2::pipeline* pipe = nullptr;
@@ -29,9 +29,9 @@ public:
 
 public:
 	// コンストラクタ
-	realSensseWrapper();
+	realSenseWrapper();
 	// デストラクタ
-	~realSensseWrapper();
+	~realSenseWrapper();
 
 	// 画像サイズの設定
 	void setCameraSize(int select, cv::Size ksize);
@@ -57,4 +57,3 @@ public:
 	// Depthカメラの距離のデータをMatクラスの形式で返す
 	cv::Mat getDepthDistance();
 };
-

@@ -1,4 +1,4 @@
-#include "realSensseWrapper.h"
+#include "realSenseWrapper.h"
 
 #include <iostream>
 
@@ -6,7 +6,7 @@ using namespace std;
 using namespace cv;
 using namespace rs2;
 
-realSensseWrapper::realSensseWrapper()
+realSenseWrapper::realSenseWrapper()
 {
 	// デバイスを抽象化するパイプラインを構築
 	if (pipe == nullptr) {
@@ -14,12 +14,12 @@ realSensseWrapper::realSensseWrapper()
 	}
 }
 
-realSensseWrapper::~realSensseWrapper()
+realSenseWrapper::~realSenseWrapper()
 {
 	delete pipe;
 }
 
-void realSensseWrapper::setCameraSize(int select, Size ksize)
+void realSenseWrapper::setCameraSize(int select, Size ksize)
 {
 	if(select == COLOR_CAMERA){
 		if (ksize.width > 1920) ksize.width = 1920;
@@ -43,7 +43,7 @@ void realSensseWrapper::setCameraSize(int select, Size ksize)
 	}
 }
 
-void realSensseWrapper::setFps(int _color_fps, int _depth_fps)
+void realSenseWrapper::setFps(int _color_fps, int _depth_fps)
 {
 	if (_color_fps < 0) _color_fps = 1;
 	else if (_color_fps > 90) _color_fps = 90;
@@ -55,7 +55,7 @@ void realSensseWrapper::setFps(int _color_fps, int _depth_fps)
 	depth_fps = _depth_fps;
 }
 
-int realSensseWrapper::init()
+int realSenseWrapper::init()
 {
 
 	config cfg;
@@ -71,7 +71,7 @@ int realSensseWrapper::init()
 	return 1;
 }
 
-Size realSensseWrapper::getSize(int select)
+Size realSenseWrapper::getSize(int select)
 {
 	if (select == DEPTH_CAMERA) {
 		return depth_size;
@@ -81,7 +81,7 @@ Size realSensseWrapper::getSize(int select)
 	}
 }
 
-void realSensseWrapper::setFrame()
+void realSenseWrapper::setFrame()
 {
 	// ストリームがフレームセットを取得するまで待機
 	frameset frames = pipe->wait_for_frames();
@@ -96,7 +96,7 @@ void realSensseWrapper::setFrame()
 	is_data = true;
 }
 
-Mat realSensseWrapper::getColorImage()
+Mat realSenseWrapper::getColorImage()
 {
 	if (!is_data) {
 		// 初回のみ、データを取得する
@@ -109,7 +109,7 @@ Mat realSensseWrapper::getColorImage()
 
 }
 
-Mat realSensseWrapper::getDepthImage()
+Mat realSenseWrapper::getDepthImage()
 {
 	if (!is_data) {
 		// 初回のみ、データを取得する
@@ -121,7 +121,7 @@ Mat realSensseWrapper::getDepthImage()
 	return data;
 }
 
-Mat realSensseWrapper::getDepthDistance()
+Mat realSenseWrapper::getDepthDistance()
 {
 	if (!is_data) {
 		// 初回のみ、データを取得する

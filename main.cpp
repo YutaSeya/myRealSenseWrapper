@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "realSensseWrapper.h"
+#include "realSenseWrapper.h"
 
 using namespace std;
 using namespace cv;
@@ -11,7 +11,7 @@ using namespace rs2;
 
 int main() try
 {
-	realSensseWrapper sense;
+	realSenseWrapper sense;
 
 	sense.init();
 

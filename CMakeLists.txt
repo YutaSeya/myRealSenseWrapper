@@ -12,12 +12,12 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra -Winit-self -Wno-missing-field-initializers -
 # Create Main project
 set(SOURCES
     main.cpp
-    realSensseWrapper.cpp
+    realSenseWrapper.cpp
 )
 
 set(HEADERS
     # main.h
-    realSensseWrapper.h
+    realSenseWrapper.h
 )
 
 add_executable(Main
