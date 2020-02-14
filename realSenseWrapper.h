@@ -45,6 +45,9 @@ public:
 	// 画像サイズを取得
 	cv::Size getSize(int select);
 
+	// FPSを取得
+	int getFPS(int select);
+
 	// 画像を取得する前に呼ぶ必要がある
 	void setFrame();
 

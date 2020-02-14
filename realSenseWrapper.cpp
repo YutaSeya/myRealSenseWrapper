@@ -71,6 +71,16 @@ int realSenseWrapper::init()
 	return 1;
 }
 
+int realSenseWrapper::getFPS(int select)
+{
+	if(select == DEPTH_CAMERA){
+		return depth_fps;
+	} else {
+		return color_fps;
+	}
+}
+
+
 Size realSenseWrapper::getSize(int select)
 {
 	if (select == DEPTH_CAMERA) {
